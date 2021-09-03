@@ -24,6 +24,7 @@ jdeps --module-path target/dependency/ --multi-release $MULTI_RELEASE --generate
 MODULE_INFO_JAVA="target/module-gen/$MODULE_NAME/versions/$MULTI_RELEASE/module-info.java"
 
 # Open packages to Gson
+sed -i '2i opens com.mojang.authlib.properties to com.google.gson;' $MODULE_INFO_JAVA
 sed -i '2i opens com.mojang.authlib.yggdrasil.request to com.google.gson;' $MODULE_INFO_JAVA
 sed -i '2i opens com.mojang.authlib.yggdrasil.response to com.google.gson;' $MODULE_INFO_JAVA
 
